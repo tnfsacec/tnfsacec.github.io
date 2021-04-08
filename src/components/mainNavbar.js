@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 class MainNavbar extends React.Component{
     render(){
@@ -14,17 +15,17 @@ class MainNavbar extends React.Component{
 
                 <nav id="nav">
                     <ul className="links">
-                        <li className="active"><a href="/">公告事項</a></li>
-                        <li><a href="/motivation">動機</a></li>
-                        <li><a href="/experience">經歷</a></li>
-                        <li><a href="/policy">政見</a></li>
-                        <li><a href="/opening">開票</a></li>
+                        <li id={"1"} className={"active"}><Link to={"/"}>公告事項</Link></li>
+                        <li id={"2"}><Link to={"/motivation"}>動機</Link></li>
+                        <li id={"3"}><Link to={"/experience"}>經歷</Link></li>
+                        <li id={"4"}><Link to={"/policy"}>政見</Link></li>
+                        <li id={"5"}><Link to={"/opening"}>開票</Link></li>
                     </ul>
                     <ul className="icons">
-                        <li><a href="#" className="icon brands fa-twitter"><span className="label">Twitter</span></a></li>
-                        <li><a href="#" className="icon brands fa-facebook-f"><span className="label">Facebook</span></a></li>
-                        <li><a href="#" className="icon brands fa-instagram"><span className="label">Instagram</span></a></li>
-                        <li><a href="#" className="icon brands fa-github"><span className="label">GitHub</span></a></li>
+                        <li><Link to={"#"} className={"icon brands fa-twitter"}><span className="label">Twitter</span></Link></li>
+                        <li><Link to={"#"} className={"icon brands fa-facebook-f"}><span className="label">Facebook</span></Link></li>
+                        <li><Link to={"#"} className={"icon brands fa-instagram"}><span className="label">Instagram</span></Link></li>
+                        <li><Link to={"#"} className={"icon brands fa-github"}><span className={"label"}>Github</span></Link></li>
                     </ul>
                 </nav>
             </div>
