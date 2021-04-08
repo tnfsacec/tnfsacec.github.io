@@ -2,20 +2,106 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="%PUBLIC_URL%/voting.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1", user-scalable=no"/>
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/main.css"/>
+    <noscript>
+      <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/noscript.css"/>
+    </noscript>
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="台南一中選舉委員會官方網站 powered by React"
     />
-    <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/voting.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
     <title>臺南一中選舉委員會</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C2ZQ4LJ48"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6C2ZQ4LJ48');
+    </script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <body class="is-preload">
     <div id="root"></div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <section>
+        <!--A form that send text to google forms-->
+        <form id="google-form">
+          <div class="fields">
+            <div class="field">
+              <label>Nickname 暱稱
+                <input type="text" name="entry.743565742" required/>
+              </label>
+            </div>
+            <div class="field">
+              <label>電子郵件 Email (用於回覆訊息)
+                <input type="text" name="entry.1429337285" required/>
+              </label>
+            </div>
+            <div class="field">
+              <label>訊息 Message
+                <textarea name="entry.859617697" rows="3" required></textarea>
+              </label>
+            </div>
+          </div>
+          <ul class="actions">
+            <li><input type="submit" value="送出" /></li>
+          </ul>
+        </form>
+      </section>
+      <section class="split contact">
+        <section class="alt">
+          <h3>Address</h3>
+          <p>701 MinZu Road No.1, Tainan,Taiwan Republic of China</p>
+        </section>
+        <!--<section>
+            <h3>Phone</h3>
+            <p>(09) Don' t call me</p>
+        </section>-->
+        <section>
+          <h3>Email</h3>
+          <p><a href="#">sivirwei@gmail.com</a></p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
+            </li>
+            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
+            </li>
+            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Untitled</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        <li>Constructed: <a href="https://sivir.pw">Alias722</a></li>
+      </ul>
+    </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/jquery.scrollex.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/jquery.scrolly.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/browser.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/breakpoints.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/util.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/main.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/googleform.js" crossorigin="anonymous"></script>
+    <script src="%PUBLIC_URL%/assets/js/pages.js"></script>
   </body>
 </html>
