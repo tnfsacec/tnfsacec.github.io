@@ -12,17 +12,15 @@ import Post from './pages/post'
 import Policy from './pages/policy'
 import Motivation from './pages/motivation'
 import Open from './pages/open'
-
-//import OtherNavbar from "./components/otherNavbar";
-import MainNavbar from "./components/mainNavbar";
+import Home from './pages/home'
 
 class App extends Component{
   render(){
     return(
         <Router>
         <Switch>
-            <Route path="/home">
-                <MainNavbar />
+            <Route path="/home/:id">
+                <Home />
             </Route>
             <Route path="/post">
                 <Post />
@@ -40,7 +38,11 @@ class App extends Component{
                 <Open />
             </Route>
             <Redirect from={'/'}
-                      to={{pathname:'/home'
+                      to={{pathname:'/home/1'
+                          ,search: ""
+                          ,state:{name:'Referrer'}}} />
+            <Redirect from={'/home'}
+                      to={{pathname:'/home/1'
                           ,search: ""
                           ,state:{name:'Referrer'}}} />
         </Switch>
