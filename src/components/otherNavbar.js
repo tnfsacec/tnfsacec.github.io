@@ -3,6 +3,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 class OtherNavbar extends React.Component{
+    componentDidMount() {
+        window.scroll(0,0)
+    }
     render(){
         return(
             <div id="wrapper">

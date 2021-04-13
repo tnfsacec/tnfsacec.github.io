@@ -1,12 +1,13 @@
 import React,{Component} from 'react'
 
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
   Switch,
   Redirect
 } from 'react-router-dom'
 
+import './css/main.css'
 import Experience from './pages/experience'
 import Post from './pages/post'
 import Policy from './pages/policy'
@@ -17,36 +18,26 @@ import Home from './pages/home'
 class App extends Component{
   render(){
     return(
-        <Router>
-        <Switch>
-            <Route path="/home/:id">
-                <Home />
-            </Route>
-            <Route path="/post">
-                <Post />
-            </Route>
-            <Route path="/experience">
-                <Experience />
-            </Route>
-            <Route path="/policy">
-                <Policy/>
-            </Route>
-            <Route path="/motivation">
-                <Motivation />
-            </Route>
-            <Route path="/opening">
-                <Open />
-            </Route>
-            <Redirect from={'/'}
-                      to={{pathname:'/home/1'
-                          ,search: ""
-                          ,state:{name:'Referrer'}}} />
-            <Redirect from={'/home'}
-                      to={{pathname:'/home/1'
-                          ,search: ""
-                          ,state:{name:'Referrer'}}} />
-        </Switch>
-        </Router>
+        <HashRouter>
+            <Switch>
+                <Route path="/home/:id" component={Home}/>
+                <Route path="/post/:id" component={Post}/>
+                <Route path="/experience" component={Experience}/>
+                <Route path="/policy" component={Policy}/>
+                <Route path="/motivation" component={Motivation}/>
+                <Route path="/opening" component={Open} />
+
+                <Redirect exact from={'/'}
+                          to={{pathname:'/home/1'
+                              ,search: ""
+                              ,state:{name:'Referrer'}}} />
+                <Redirect exact from={'/home'}
+                          to={{pathname:'/home/1'
+                              ,search: ""
+                              ,state:{name:'Referrer'}}} />
+            </Switch>
+
+        </HashRouter>
     )
   }
 }

@@ -1,18 +1,15 @@
 import React from 'react'
-import OtherNavbar from "../components/otherNavbar";
 
 class Open extends React.Component{
     componentDidMount(){
-        let toggle = document.getElementById('5')
-        toggle.classList.add("active")
-
-        alert("function not enabled")
+        alert("尚未開票，功能未開放")
         window.location.replace('/')
     }
     render(){
         return(
-            <OtherNavbar />
-
+            <h1>
+                Open
+            </h1>
         )
     }
 }

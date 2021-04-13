@@ -2,6 +2,9 @@ import React from 'react'
 import {Link} from "react-router-dom";
 
 class MainNavbar extends React.Component{
+    componentDidMount() {
+        window.scroll(0,0)
+    }
     render(){
         return(
             <div id="wrapper" className="fade-in">
