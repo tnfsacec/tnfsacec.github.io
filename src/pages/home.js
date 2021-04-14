@@ -2,12 +2,6 @@ import React from 'react'
 
 class Motivation extends React.Component{
     componentDidMount(){
-        const script = document.createElement("script");
-        script.async = true;
-        script.onload = () => {
-            window.alert("Hello")
-        };
-
         const path = this.props.location.pathname.split('/')
         const url = 'https://docs.sivir.pw/home/'+path[2]
         var request = new XMLHttpRequest()

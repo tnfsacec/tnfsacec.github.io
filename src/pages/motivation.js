@@ -2,8 +2,6 @@ import React from 'react'
 
 class Motivation extends React.Component{
     componentDidMount(){
-
-
         const teams = document.getElementById("teams")
         const parliamentary = document.getElementById("parliamentary")
         teams.innerHTML += "<header class=\"major\"><h1>正副會長候選人參選動機</h1></header>"

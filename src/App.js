@@ -14,6 +14,7 @@ import Policy from './pages/policy'
 import Motivation from './pages/motivation'
 import Open from './pages/open'
 import Home from './pages/home'
+import Debate from './pages/debate'
 
 class App extends Component{
   render(){
@@ -26,6 +27,7 @@ class App extends Component{
                 <Route path="/policy" component={Policy}/>
                 <Route path="/motivation" component={Motivation}/>
                 <Route path="/opening" component={Open} />
+                <Route path={"/debate"} component={Debate} />
 
                 <Redirect exact from={'/'}
                           to={{pathname:'/home/1'
