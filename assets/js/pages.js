@@ -4,7 +4,8 @@ window.addEventListener('hashchange',()=>{
                   document.getElementById('2'),
                   document.getElementById('3'),
                   document.getElementById('4'),
-                  document.getElementById('5')]
+                  document.getElementById('5'),
+                  document.getElementById('6')]
 
     var toChange = 1
     switch (url[4]){
@@ -17,13 +18,16 @@ window.addEventListener('hashchange',()=>{
         case 'policy':
             toChange = 4
             break
-        case 'open':
+        case 'debate':
             toChange = 5
+            break
+        case 'open':
+            toChange = 6
             break
         default:
             break
     }
-    for(var i = 0;i < 5;++i){
+    for(var i = 0;i < 6;++i){
         if(toChange == (i+1)){
             toggle[i].classList.add('active')
         }else{
