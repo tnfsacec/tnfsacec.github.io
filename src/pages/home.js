@@ -5,12 +5,10 @@ class Motivation extends React.Component{
         const script = document.createElement("script");
         script.async = true;
         script.onload = () => {
-            window.alert("ㄊHello")
+            window.alert("Hello")
         };
 
         const path = this.props.location.pathname.split('/')
-        //const url = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
-        //window.alert(this.props.location.pathname)
         const url = 'https://docs.sivir.pw/home/'+path[2]
         var request = new XMLHttpRequest()
         request.open('GET',url)
@@ -28,6 +26,9 @@ class Motivation extends React.Component{
             var subtitle = obj['subtitle']
             var time = obj['time']
             let id = obj['id']
+            if(id === 1){
+                return;
+            }
             var chunks = "chunk"+flow
             var divappend = document.getElementById(chunks)
             var html = "<header class=\"major\">\n" +
