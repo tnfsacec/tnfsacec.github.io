@@ -30,10 +30,10 @@ class Debate extends React.Component{
         }
         return(
             <React.Fragment>
-                <h1 id={"DebateTitle"} style={{textAlign: "center"}} />
-                <div id={"DebateContext"} style={style}>
+                <h1 id={"DebateTitle"} style={{textAlign: "center"}}>
                     載入中
-                </div>
+                </h1>
+                <div id={"DebateContext"} style={style} />
             </React.Fragment>
         )
     }
