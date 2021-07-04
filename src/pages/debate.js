@@ -9,7 +9,7 @@ export default function Debate(){
     const [link,setLink] = useState([])
 
     const fetchFile = async ()=>{
-        setList(['one','two'])
+        setList(['one','two','three'])
         setLink([{link:'https://forms.gle/NU7HzfTZThJXRErU9',context: '報名連結'},{link:'https://tnfsacec.github.io/#/post/5',context: '辯論會紀錄'}])
         const url = "https://tnfsacec.github.io/file/debate.json"
         const data = await fetch(url,{
