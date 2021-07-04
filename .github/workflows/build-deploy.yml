@@ -1,0 +1,52 @@
+name: 編譯並上傳至 github pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    name: 編譯
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 檢查程式碼
+        uses: actions/checkout@v2
+
+      - name: 安裝 node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: 安裝套件
+        run: npm ci
+
+      - name: 編譯
+        run: npm run build
+
+      - name: 上傳檔案
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+  deploy:
+    name: 派遣
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: 下載 artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+      - name: 派遣至 github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publich dir: ./build

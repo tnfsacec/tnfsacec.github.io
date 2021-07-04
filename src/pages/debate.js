@@ -1,42 +1,57 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 
-class Debate extends React.Component{
-    componentDidMount(){
-        //window.alert('正在準備')
-        //window.location.replace('/')
+export default function Debate(){
+    //const [displayStatus,setDisplayStatus] = useState(false)
+    const [title,setTitle] = useState('載入中')
+    const [context,setContext] = useState('')
+    const [list,setList] = useState([])
+    const [link,setLink] = useState([])
+
+    const fetchFile = async ()=>{
+        setList(['one','two'])
+        setLink([{link:'https://forms.gle/NU7HzfTZThJXRErU9',context: '報名連結'},{link:'https://tnfsacec.github.io/#/post/5',context: '辯論會紀錄'}])
         const url = "https://tnfsacec.github.io/file/debate.json"
-        // eslint-disable-next-line
-        let toBeReplace = new RegExp("\n","g")
-
-        let request = new XMLHttpRequest()
-        const title = document.getElementById("DebateTitle")
-        const context = document.getElementById("DebateContext")
-        //title.innerHTML += "第六屆正副會長辯論會"
-
-        request.open('GET',url)
-        request.responseType = 'text'
-        request.send()
-        request.onload = ()=>{
-            const data = JSON.parse(request.response)
-            title.innerHTML = data['title'].replace(toBeReplace,"<br>")
-            context.innerHTML = data['context'].replace(toBeReplace,"<br>")
-        }
+        const data = await fetch(url,{
+            method: 'GET',
+            headers:{
+                'Accept': 'application/json'
+            }
+        })
+        const json = await data.json()
+        console.log(json)
+        setTitle(json['title'])
+        setContext(json['context'])
     }
 
-    render(){
-        const style = {
-            textAlign: "left",
-            fontSize: 20
-        }
-        return(
+    const contextStyle = {
+        textAlign: "left",
+        fontSize: 20
+    }
+
+    useEffect(()=>{
+        fetchFile()
+    },[])
+
+    return(
             <React.Fragment>
-                <h1 id={"DebateTitle"} style={{textAlign: "center"}}>
-                    載入中
-                </h1>
-                <div id={"DebateContext"} style={style} />
+                <center><h1>{title}</h1></center>
+                <div style={contextStyle}>{context}
+                <ol>
+                    {list.map((data)=>{
+                        return(
+                            <li>{data}</li>
+                        )
+                    })}
+                </ol>
+                    <ul>
+                    {link.map((data)=>{
+                        return(
+                            <li><Link to={data.link}>{data.context}</Link></li>
+                        )
+                    })}
+                    </ul>
+                </div>
             </React.Fragment>
-        )
-    }
+    )
 }
-
-export default Debate
