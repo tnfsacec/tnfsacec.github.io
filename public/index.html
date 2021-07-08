@@ -1,43 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="ch">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/voting.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--<link rel="stylesheet" href="%PUBLIC_URL%/assets/css/main.css"/>
+  <noscript>
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/noscript.css"/>
+  </noscript>-->
+  <meta name="theme-color" content="#000000" />
+  <meta
+          name="description"
+          content="台南一中選舉委員會官方網站 powered by React"
+  />
+  <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/voting.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>臺南一中選舉委員會</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C2ZQ4LJ48"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6C2ZQ4LJ48');
+    gtag('config','GA_TRACKING_ID',{
+	'page_path': location.pathname + location.hash
+    })
+  </script>
+  <!-- Start Single Page Apps for GitHub Pages -->
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    // This script checks to see if a redirect is present in the query string,
+    // converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+                l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+  <!-- End Single Page Apps for GitHub Pages -->
+</head>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
+<body class="is-preload">
+
+<div id="wrapper" class="fade-in">
+  <!-- Intro -->
+  <div id="intro">
+    <h1>臺南一中<br/>
+      選舉委員會</h1>
+    <ul class="actions">
+      <li><a href="#" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+    </ul>
+  </div>
+  <div id="nav">
+    <ul class="links">
+      <li id="1"><a href="/">公告事項</a></li>
+      <li id="2"><a href="/motivation">動機</a></li>
+      <li id="3"><a href="/experience">經歷</a></li>
+      <li id="4"><a href="/policy">政見</a></li>
+      <li id="5"><a href="/debate">辯論會</a></li>
+      <li id="6"><a href="/opening">開票</a></li>
+    </ul>
+    <ul class="icons">
+      <!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
+      <li><a href="https://www.facebook.com/tnfshsa" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+      <li><a href="https://www.instagram.com/tnfshsa/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+      <li><a href="https://github.com/tnfsacec" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+    </ul>
+  </div>
+  <div id="main">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  </div>
+</div>
+<br />
+<!-- Footer -->
+<footer id="footer">
+  <section>
+    <!--A form that send text to google forms-->
+    <label style="text-align: center;font-size: 20px">意見反饋</label>
+    <form id="google-form">
+      <div class="fields">
+        <div class="field">
+		<label>Nickname 暱稱<br>
+            <input type="text" name="entry.743565742" required/>
+          </label>
+        </div>
+        <div class="field">
+		<label>電子郵件 Email (用於回覆訊息)<br>
+            <input type="text" name="entry.1429337285" required/>
+          </label>
+        </div>
+        <div class="field">
+          <label>訊息 Message
+            <textarea name="entry.859617697" rows="3" required></textarea>
+          </label>
+        </div>
+      </div>
+      <ul class="actions">
+        <li><input type="submit" value="送出" /></li>
+      </ul>
+    </form>
+  </section>
+  <section class="split contact">
+    <section class="alt">
+      <h3>Address</h3>
+      <p>臺南市東區民族路一段1號</p>
+    </section>
+    <!--<section>
+        <h3>Phone</h3>
+        <p>(09) Don' t call me</p>
+    </section>-->
+    <section>
+      <h3>Email</h3>
+      <p><a href="#">sivirwei@gmail.com</a></p>
+    </section>
+    <section>
+      <h3>Social</h3>
+      <ul class="icons alt">
+        <!--<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>-->
+        <li><a href="https://www.facebook.com/tnfshsa" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a>
+        </li>
+        <li><a href="https://www.instagram.com/tnfshsa/" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a>
+        </li>
+        <li><a href="https://github.com/tnfsacec" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<!-- Copyright -->
+<div id="copyright">
+  <ul>
+    <li>&copy; Untitled</li>
+    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+    <li>Constructed: <a href="https://sivir.pw">Alias722</a></li>
+  </ul>
+</div>
+<!-- Scripts -->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/jquery.scrollex.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/jquery.scrolly.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/browser.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/breakpoints.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/util.js"></script>
+<script src="%PUBLIC_URL%/assets/js/main.js"></script>
+<script src="%PUBLIC_URL%/assets/js/googleform.js" crossorigin="anonymous"></script>
+<script src="%PUBLIC_URL%/assets/js/pages.js"></script>
+</body>
 </html>
