@@ -37,7 +37,7 @@ export default function Home(props){
                                 <p>{data.subtitle}</p>
                             </header>
                             <ul class={'actions special'}>
-                                <li><Link to={'/post/'+props.match.params.id} className={'button large'}>Full Story</Link></li>
+                                <li><Link to={'/post/'+data.id} className={'button large'}>Full Story</Link></li>
                             </ul>
                         </div>
                     )

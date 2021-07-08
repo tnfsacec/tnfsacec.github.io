@@ -20,7 +20,7 @@ import Privacy from './pages/privacy'
 class App extends Component{
   render(){
     return(
-        <BrowserRouter>
+        <BrowserRouter forceRefresh={true}>
             <Switch>
                 <Route path="/home/:id" component={Home}/>
                 <Route path="/post/:id" component={Post}/>
